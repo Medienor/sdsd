@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Screenshot App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Screenshot App</h1>
+      <form>
+        <label for="url-input">Enter a URL:</label>
+        <input type="text" id="url-input" required>
+        <select id="screenshot-type">
+          <option value="desktop">Desktop</option>
+          <option value="mobile">Mobile</option>
+        </select>
+        <button type="submit">Take Screenshot</button>
+      </form>
+      <div class="loader-container">
+        <div class="loader"></div>
+        <div class="loader-percent">0%</div>
+      </div>
+      <div id="screenshot-container"></div>
+      <div id="success-message" class="hidden">
+        <p>Screenshot taken successfully!</p>
+        <img id="latest-screenshot" src="" alt="Screenshot">
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
